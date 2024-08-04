@@ -1,0 +1,20 @@
+@import "../../../../../styles/globals.scss";
+
+.gift-btn-login {
+    background-color: $component-background;
+    color: #fff;
+
+    &:hover {
+        background-color: $hover-background;
+        color: #fff;
+    }
+}
+
+.gift-btn-register {
+    color: $component-background;
+
+    &:hover {
+        background-color: #dee4eb;
+        color: $component-background;
+    }
+}

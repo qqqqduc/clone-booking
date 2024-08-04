@@ -1,0 +1,21 @@
+.custom-multi-carousel {
+    z-index: 1 !important;
+    .react-multiple-carousel__arrow {
+        background-color: #fff;
+        z-index: 1 !important;
+
+        &::before {
+            color: #333;
+        }
+    }
+
+    .react-multiple-carousel__arrow--left {
+        box-shadow: 0 2px 16px 0 rgba(26, 26, 26, 0.24);
+        left: -16px;
+    }
+
+    .react-multiple-carousel__arrow--right {
+        box-shadow: 0 2px 8px 0 rgba(26, 26, 26, 0.16);
+        right: -16px;
+    }
+}

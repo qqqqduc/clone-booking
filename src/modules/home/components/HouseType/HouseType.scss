@@ -1,0 +1,65 @@
+@import "../../../../styles/globals.scss";
+
+.custom-antd-card {
+    position: relative;
+    box-shadow: 0 2px 8px 0 rgba(26, 26, 26, 0.16);
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    .ant-card-head {
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        box-shadow: 0 2px 8px 0 rgba(26, 26, 26, 0.16);
+        padding: 0;
+        min-height: 0;
+        background-color: #fff;
+
+        .ant-card-head-wrapper {
+            justify-content: center;
+
+            .ant-card-extra {
+                margin: 0;
+            }
+        }
+    }
+    .ant-card-cover {
+        height: 193px !important;
+
+        img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover;
+        }
+    }
+
+    .ant-card-body {
+        padding: 8px;
+
+        .ant-card-meta {
+            .ant-card-meta-detail {
+                .ant-card-meta-title {
+                    font-size: $font-size-sm;
+                    margin-top: 4px;
+                    margin-bottom: 0;
+                }
+                .ant-card-meta-description {
+                    color: $text-color-description;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    
+    .house-price {
+        .house-price-text {
+            color: $text-color-description;
+            font-size: 12px;
+        }
+    }
+}

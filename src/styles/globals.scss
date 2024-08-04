@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    div {
+        font-family: "Roboto";
+        color: #1a1a1a;
+    }
+}
+
+// background
+$header-background: #003b95;
+$hover-background: #0f51ac;
+$component-background: #006ce4;
+
+// font
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-5xl: 3rem;
+
+// text color
+$text-color-primary: #1a1a1a;
+$text-color-description: #595959;
