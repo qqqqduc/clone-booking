@@ -4,9 +4,9 @@ import MenuHeaderBottom from "./MenuHeaderBottom/MenuHeaderBottom";
 import { usePathname } from "next/navigation";
 import { routesList } from "@/routes/routesList";
 import _ from "lodash";
-import "./MainHeader.scss";
 import SearchHeader from "./SearchHeader/SearchHeader";
 import HeaderTop from "./HeaderTop/HeaderTop";
+import "./MainHeader.scss";
 
 const { Header } = Layout;
 
@@ -17,7 +17,7 @@ function MainHeader() {
     );
 
     return (
-        <Header className="custom-header">
+        <Header className="custom-ant-header">
             <div className="px-4">
                 <HeaderTop />
                 {!isLoginPage && <MenuHeaderBottom />}

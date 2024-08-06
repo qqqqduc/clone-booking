@@ -7,8 +7,8 @@ import ICPlane from "@/components/Icons/HeaderIcons/ICPlane";
 import ICCar from "@/components/Icons/HeaderIcons/ICCar";
 import ICPlace from "@/components/Icons/HeaderIcons/ICPlace";
 import ICTaxi from "@/components/Icons/HeaderIcons/ICTaxi";
-import "./MenuHeaderBottom.scss";
 import Link from "next/link";
+import "./MenuHeaderBottom.scss";
 
 type MenuTheme = GetProp<MenuProps, "theme">;
 
@@ -86,7 +86,7 @@ function MenuHeaderBottom() {
             selectedKeys={[current]}
             mode="horizontal"
             items={items}
-            className="custom-menu-header-bottom"
+            className="custom-menu-header-bottom container max-w-[1110px] mx-auto"
         />
     );
 }

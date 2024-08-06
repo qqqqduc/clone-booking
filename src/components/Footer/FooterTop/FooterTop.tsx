@@ -2,7 +2,7 @@ import React from "react";
 
 function FooterTop() {
     return (
-        <div className="mb-12 min-w-[1000px] max-w-[1110px] m-auto">
+        <div className="container mx-auto max-w-[1110px] px-2 mb-12">
             <ul className="flex justify-between">
                 <li className="flex flex-col gap-3 max-w-48 pr-3">
                     <div>

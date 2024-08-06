@@ -5,7 +5,6 @@ import { Footer } from "antd/es/layout/layout";
 import { usePathname } from "next/navigation";
 import FooterTop from "./FooterTop/FooterTop";
 import FooterBottom from "./FooterBottom/FooterBottom";
-import "./MainFooter.scss";
 
 function MainFooter() {
     const pathname = usePathname();
@@ -15,9 +14,9 @@ function MainFooter() {
     return (
         <>
             {!isLoginPage && (
-                <Footer className="px-0 w-full">
+                <Footer className="px-0">
                     <FooterTop />
-                    <Divider />
+                    <Divider className="container max-w-[1110px] mx-auto px-2" />
                     <FooterBottom />
                 </Footer>
             )}

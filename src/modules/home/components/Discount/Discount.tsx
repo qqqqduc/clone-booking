@@ -6,7 +6,7 @@ function Discount() {
         <div>
             <div className="mt-6">
                 <ItemsHead title="Ưu đãi" />
-                <div className="w-full p-4 bg-[url('/img/discount.jpeg')] bg-no-repeat bg-cover bg-center h-[156px] mt-3 rounded-lg">
+                <div className="p-4 bg-[url('/img/discount.jpeg')] bg-no-repeat bg-cover bg-center h-[156px] mt-3 rounded-lg">
                     <div className="w-[380px]">
                         <div className="text-xl text-white font-semibold">
                             Đặt liền tay, bắt ngay ưu đãi
