@@ -32,22 +32,6 @@ function ResortListSlider({ slideShow }: IProps) {
                     items: slideShow,
                     partialVisibilityGutter: 40,
                 },
-                // mobile: {
-                //     breakpoint: {
-                //         max: 464,
-                //         min: 0,
-                //     },
-                //     items: 1,
-                //     partialVisibilityGutter: 30,
-                // },
-                // tablet: {
-                //     breakpoint: {
-                //         max: 1024,
-                //         min: 464,
-                //     },
-                //     items: 2,
-                //     partialVisibilityGutter: 30,
-                // },
             }}
             rewind={false}
             rewindWithAnimation={false}
@@ -175,8 +159,7 @@ function ResortListSlider({ slideShow }: IProps) {
                         </div>
                     </div>
                 }
-            />
-            
+            />     
         </Carousel>
     );
 }

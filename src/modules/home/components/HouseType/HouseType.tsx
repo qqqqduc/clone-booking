@@ -12,7 +12,7 @@ interface IProps {
 
 function HouseType({ width, priceElement }: IProps) {
     return (
-        <a href="#" className="inline-block">
+        <a href="#" className="inline-block w-full">
             <Card
                 extra={<ICHeart fillColor="#333" />}
                 style={{ width: width }}
