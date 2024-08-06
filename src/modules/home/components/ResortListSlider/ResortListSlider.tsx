@@ -16,12 +16,8 @@ function ResortListSlider({ slideShow }: IProps) {
             autoPlaySpeed={3000}
             centerMode={false}
             className="custom-multi-carousel"
-            containerClass="container"
-            dotListClass=""
             focusOnSelect={false}
             infinite={false}
-            itemClass=""
-            keyBoardControl
             minimumTouchDrag={80}
             pauseOnHover
             renderArrowsWhenDisabled={false}
@@ -57,7 +53,6 @@ function ResortListSlider({ slideShow }: IProps) {
             rewindWithAnimation={false}
             rtl={false}
             shouldResetAutoplay
-            sliderClass=""
             slidesToSlide={1}
             swipeable
         >

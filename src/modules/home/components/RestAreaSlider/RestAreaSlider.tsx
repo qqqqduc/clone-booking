@@ -17,12 +17,8 @@ function RestAreaSlider({ slideShow }: IProps) {
                 autoPlaySpeed={3000}
                 centerMode={false}
                 className="custom-multi-carousel"
-                containerClass="container"
-                dotListClass=""
                 focusOnSelect={false}
                 infinite={false}
-                itemClass=""
-                keyBoardControl
                 minimumTouchDrag={80}
                 pauseOnHover
                 renderArrowsWhenDisabled={false}
@@ -59,7 +55,6 @@ function RestAreaSlider({ slideShow }: IProps) {
                 rtl={false}
                 shouldResetAutoplay
                 showDots={false}
-                sliderClass=""
                 slidesToSlide={1}
                 swipeable
             >

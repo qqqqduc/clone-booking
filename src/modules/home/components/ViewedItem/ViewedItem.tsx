@@ -1,6 +1,5 @@
 import React from "react";
 import CardItem from "../HouseType/HouseType";
-import TitleItem from "../ItemsHead/ItemsHead";
 import ItemsHead from "../ItemsHead/ItemsHead";
 
 function ViewedItem() {
