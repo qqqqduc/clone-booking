@@ -11,20 +11,20 @@ import "./MainHeader.scss";
 const { Header } = Layout;
 
 function MainHeader() {
-    const pathname = usePathname();
-    const isLoginPage = routesList.find(
-        (route) => route.path === pathname && route.isLoginPage
-    );
+  const pathname = usePathname();
+  const isLoginPage = routesList.find(
+    (route) => route.path === pathname && route.isLoginPage
+  );
 
-    return (
-        <Header className="custom-ant-header">
-            <div className="px-4">
-                <HeaderTop />
-                {!isLoginPage && <MenuHeaderBottom />}
-            </div>
-            {!isLoginPage && <SearchHeader />}
-        </Header>
-    );
+  return (
+    <Header className="custom-ant-header">
+      <div className="px-4">
+        <HeaderTop />
+        {!isLoginPage && <MenuHeaderBottom />}
+      </div>
+      {!isLoginPage && <SearchHeader />}
+    </Header>
+  );
 }
 
 export default MainHeader;

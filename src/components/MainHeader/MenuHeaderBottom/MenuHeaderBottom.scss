@@ -1,35 +1,35 @@
 @import "../../../styles/globals.scss";
 
 .custom-menu-header-bottom {
-    &::before {
-        display: none !important;
-    }
+  &::before {
+    display: none !important;
+  }
+  &::after {
+    display: none !important;
+  }
+  margin: auto;
+  align-items: center !important;
+  gap: 6px !important;
+  line-height: normal !important;
+  background-color: $header-background !important;
+  .ant-menu-item {
     &::after {
-        display: none !important;
+      display: none !important;
     }
-    margin: auto;
-    align-items: center !important;
-    gap: 6px !important;
-    line-height: normal !important;
-    background-color: $header-background !important;
-    .ant-menu-item {
-        &::after {
-            display: none !important;
-        }
-        display: flex;
-        align-items: center;
-        padding: 8px 12px !important;
-        color: #fff !important;
-        font-size: $font-size-sm !important;
-        line-height: 24px !important;
-        border-radius: 9999px !important;
+    display: flex;
+    align-items: center;
+    padding: 8px 12px !important;
+    color: #fff !important;
+    font-size: $font-size-sm !important;
+    line-height: 24px !important;
+    border-radius: 9999px !important;
 
-        &:hover {
-            background-color: $hover-background !important;
-        }
+    &:hover {
+      background-color: $hover-background !important;
     }
-    .ant-menu-item-selected {
-        background-color: $hover-background !important;
-        border: 1px solid #fff !important;
-    }
+  }
+  .ant-menu-item-selected {
+    background-color: $hover-background !important;
+    border: 1px solid #fff !important;
+  }
 }

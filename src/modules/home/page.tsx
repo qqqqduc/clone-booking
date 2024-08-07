@@ -11,21 +11,21 @@ import FavoriteDestination from "./components/FavoriteDestination/FavoriteDestin
 import "./page.scss";
 
 export function Home() {
-    return (
-        <div>
-            {/* <Banner /> */}
-            {/* <SearchLatest /> */}
-            <ViewedItem />
-            <Discount />
-            <SearchRestAreaType />
-            <TopDestination />
-            <Plan />
-            {/* COMPONENT LỌC THEO ĐỊA ĐIỂM */}
-            <Discovery />
-            <GoodResortArea />
-            <LoginGifts />
-            {/* KHÁM PHÁ CHỖ NGHỈ */}
-            <FavoriteDestination />
-        </div>
-    );
+  return (
+    <div>
+      {/* <Banner /> */}
+      {/* <SearchLatest /> */}
+      <ViewedItem />
+      <Discount />
+      <SearchRestAreaType />
+      <TopDestination />
+      <Plan />
+      {/* COMPONENT LỌC THEO ĐỊA ĐIỂM */}
+      <Discovery />
+      <GoodResortArea />
+      <LoginGifts />
+      {/* KHÁM PHÁ CHỖ NGHỈ */}
+      <FavoriteDestination />
+    </div>
+  );
 }

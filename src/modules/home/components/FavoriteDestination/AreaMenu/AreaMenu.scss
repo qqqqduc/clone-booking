@@ -1,42 +1,42 @@
 @import "../../../../../styles/globals.scss";
 
 .area-menu {
-    &::before {
-        display: none !important;
-    }
+  &::before {
+    display: none !important;
+  }
+  &::after {
+    display: none !important;
+  }
+  max-width: 1110px;
+  margin: auto;
+  border-bottom: none !important;
+  align-items: center !important;
+  gap: 6px !important;
+  line-height: normal !important;
+  .ant-menu-item {
     &::after {
-        display: none !important;
+      display: none !important;
     }
-    max-width: 1110px;
-    margin: auto;
-    border-bottom: none !important;
-    align-items: center !important;
-    gap: 6px !important;
-    line-height: normal !important;
-    .ant-menu-item {
-        &::after {
-            display: none !important;
-        }
-        display: flex;
-        align-items: center;
-        padding: 8px 12px !important;
-        color: #333 !important;
-        line-height: 24px !important;
-        border-radius: 9999px !important;
+    display: flex;
+    align-items: center;
+    padding: 8px 12px !important;
+    color: #333 !important;
+    line-height: 24px !important;
+    border-radius: 9999px !important;
 
-        .ant-menu-title-content {
-            font-size: $font-size-sm !important;
-        }
+    .ant-menu-title-content {
+      font-size: $font-size-sm !important;
+    }
 
-        &:hover {
-            background-color: rgba(26, 26, 26, 0.06) !important;
-        }
+    &:hover {
+      background-color: rgba(26, 26, 26, 0.06) !important;
     }
-    .ant-menu-item-selected {
-        border: 1px solid $component-background !important;
-        background-color: #cbf5fc !important;
-    }
-    .ant-menu-horizontal {
-        border-bottom: none;
-    }
+  }
+  .ant-menu-item-selected {
+    border: 1px solid $component-background !important;
+    background-color: #cbf5fc !important;
+  }
+  .ant-menu-horizontal {
+    border-bottom: none;
+  }
 }

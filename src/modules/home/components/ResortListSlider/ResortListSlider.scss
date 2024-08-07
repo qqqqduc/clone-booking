@@ -1,22 +1,22 @@
 .custom-multi-carousel {
-    .react-multiple-carousel__arrow {
-        background-color: red;
-        z-index: 1 !important;
+  .react-multiple-carousel__arrow {
+    background-color: red;
+    z-index: 1 !important;
 
-        &::before {
-            color: #333;
-        }
+    &::before {
+      color: #333;
     }
+  }
 
-    .react-multiple-carousel__arrow--left {
-        box-shadow: 0 2px 16px 0 rgba(26, 26, 26, 0.24);
-        left: -16px;
-        z-index: 999 !important;
-    }
+  .react-multiple-carousel__arrow--left {
+    box-shadow: 0 2px 16px 0 rgba(26, 26, 26, 0.24);
+    left: -16px;
+    z-index: 999 !important;
+  }
 
-    .react-multiple-carousel__arrow--right {
-        box-shadow: 0 2px 8px 0 rgba(26, 26, 26, 0.16);
-        right: -16px;
-        z-index: 999 !important;
-    }
+  .react-multiple-carousel__arrow--right {
+    box-shadow: 0 2px 8px 0 rgba(26, 26, 26, 0.16);
+    right: -16px;
+    z-index: 999 !important;
+  }
 }

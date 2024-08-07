@@ -1,62 +1,62 @@
 @import "../../../../styles/globals.scss";
 
 .custom-menu-header-top {
-    &::before {
-        display: none !important;
-    }
+  &::before {
+    display: none !important;
+  }
+  &::after {
+    display: none !important;
+  }
+  display: flex;
+  align-items: center !important;
+  gap: 8px !important;
+  line-height: normal !important;
+  background-color: #003b95 !important;
+
+  .custom-menu-item-header-top {
     &::after {
-        display: none !important;
+      display: none !important;
     }
     display: flex;
-    align-items: center !important;
-    gap: 8px !important;
-    line-height: normal !important;
-    background-color: #003b95 !important;
+    justify-content: center;
+    align-items: center;
+    padding: 12px !important;
+    color: #fff !important;
+    font-size: $font-size-base !important;
+    font-weight: 600;
+    line-height: 24px !important;
+    border-radius: 4px !important;
 
-    .custom-menu-item-header-top {
-        &::after {
-            display: none !important;
-        }
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 12px !important;
-        color: #fff !important;
-        font-size: $font-size-base !important;
-        font-weight: 600;
-        line-height: 24px !important;
-        border-radius: 4px !important;
+    &:hover {
+      background-color: #0f51ac !important;
+    }
+    &:nth-child(4) {
+      padding: 12px !important;
+    }
+  }
 
-        &:hover {
-            background-color: #0f51ac !important;
-        }
-        &:nth-child(4) {
-            padding: 12px !important;
-        }
+  .custom-menu-action-header-top {
+    font-weight: 500;
+    padding: 8px !important;
+    border-radius: 4px !important;
+    background-color: #fff !important;
+
+    &::after {
+      display: none !important;
     }
 
-    .custom-menu-action-header-top {
-        font-weight: 500;
-        padding: 8px !important;
-        border-radius: 4px !important;
-        background-color: #fff !important;
-
-        &::after {
-            display: none !important;
-        }
-
-        &:hover {
-            background-color: rgb(247, 243, 243) !important;
-        }
+    &:hover {
+      background-color: rgb(247, 243, 243) !important;
     }
+  }
 
-    .ant-popover {
-        .ant-popover-inner {
-            padding: 0 !important;
-            .ant-popover-inner-content {
-                border-radius: 8px !important;
-                overflow: hidden !important;
-            }
-        }
+  .ant-popover {
+    .ant-popover-inner {
+      padding: 0 !important;
+      .ant-popover-inner-content {
+        border-radius: 8px !important;
+        overflow: hidden !important;
+      }
     }
+  }
 }

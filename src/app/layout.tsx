@@ -8,17 +8,17 @@ import "../styles/app.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-    return (
-        <html lang="en">
-            <body className={inter.className}>
-                <StoreProvider>
-                    <MainLayout>{children}</MainLayout>
-                </StoreProvider>
-            </body>
-        </html>
-    );
+  return (
+    <html lang="en">
+      <body className={inter.className}>
+        <StoreProvider>
+          <MainLayout>{children}</MainLayout>
+        </StoreProvider>
+      </body>
+    </html>
+  );
 }
