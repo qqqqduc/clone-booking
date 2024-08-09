@@ -1,6 +1,4 @@
 import React from "react";
-import { Input } from "antd";
-import { UserOutlined } from '@ant-design/icons';
 
 function SearchHeader() {
     return (
@@ -12,13 +10,8 @@ function SearchHeader() {
                 <div className="text-2xl text-white mt-2">
                     Tìm ưu đãi khách sạn, chỗ nghỉ dạng nhà và nhiều hơn nữa...
                 </div>
-                <div>
-                    <Input
-                        size="large"
-                        placeholder="large size"
-                        prefix={<UserOutlined />}
-                    />
-                </div>
+
+               
             </div>
         </div>
     );

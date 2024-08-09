@@ -7,6 +7,7 @@ import _ from "lodash";
 import "./MainHeader.scss";
 import SearchHeader from "./SearchHeader/SearchHeader";
 import HeaderTop from "./HeaderTop/HeaderTop";
+import SearchBox from "./SearchBox/SearchBox";
 
 const { Header } = Layout;
 
@@ -23,6 +24,8 @@ function MainHeader() {
                 {!isLoginPage && <MenuHeaderBottom />}
             </div>
             {!isLoginPage && <SearchHeader />}
+
+            <SearchBox />
         </Header>
     );
 }

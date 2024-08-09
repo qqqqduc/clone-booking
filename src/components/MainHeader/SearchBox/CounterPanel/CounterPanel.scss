@@ -1,0 +1,13 @@
+@import "../../../../styles/globals.scss";
+
+.counter-panel-pet{
+    border-top: 1px solid #e7e7e7!important;
+}
+
+.counter-panel-button{
+    color: #006ce4;
+    border: 1px solid #006ce4;
+    &:hover{
+        background-color: rgba(0,108,228,0.06)!important;
+    }
+}
