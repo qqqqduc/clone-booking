@@ -1,22 +1,9 @@
 @import "../../styles/globals.scss";
 
-.custom-header {
-    height: max-content !important;
-    background-color: $header-background !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    padding-bottom: 8px !important;
-
-    .header-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        // min-width: 1000px;
-        max-width: 1100px;
-        padding: 0 16px;
-        margin: auto;
-        color: "#fff" !important;
-        height: 72px;
-        background-color: #003b95 !important;
-    }
+.custom-ant-header {
+  height: max-content !important;
+  background-color: $header-background !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 8px !important;
 }

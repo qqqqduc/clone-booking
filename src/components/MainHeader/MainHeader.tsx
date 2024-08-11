@@ -4,18 +4,18 @@ import MenuHeaderBottom from "./MenuHeaderBottom/MenuHeaderBottom";
 import { usePathname } from "next/navigation";
 import { routesList } from "@/routes/routesList";
 import _ from "lodash";
-import "./MainHeader.scss";
 import SearchHeader from "./SearchHeader/SearchHeader";
 import HeaderTop from "./HeaderTop/HeaderTop";
 import SearchBox from "./SearchBox/SearchBox";
+import "./MainHeader.scss";
 
 const { Header } = Layout;
 
 function MainHeader() {
-    const pathname = usePathname();
-    const isLoginPage = routesList.find(
-        (route) => route.path === pathname && route.isLoginPage
-    );
+  const pathname = usePathname();
+  const isLoginPage = routesList.find(
+    (route) => route.path === pathname && route.isLoginPage
+  );
 
     return (
         <Header className="custom-header">
@@ -28,6 +28,5 @@ function MainHeader() {
             <SearchBox />
         </Header>
     );
-}
 
 export default MainHeader;

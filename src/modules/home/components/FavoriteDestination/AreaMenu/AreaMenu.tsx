@@ -7,26 +7,26 @@ import "./AreaMenu.scss";
 type MenuItem = GetProp<MenuProps, "items">[number];
 
 interface IProps {
-    items?: MenuItem[];
+  items?: MenuItem[];
 }
 
 function AreaMenu({ items }: IProps) {
-    const [current, setCurrent] = useState<string>("area");
-    const router = useRouter();
+  const [current, setCurrent] = useState<string>("area");
+  const router = useRouter();
 
-    const onclick: MenuProps["onClick"] = (e) => {
-        setCurrent(e.key);
-    };
+  const onclick: MenuProps["onClick"] = (e) => {
+    setCurrent(e.key);
+  };
 
-    return (
-        <Menu
-            onClick={onclick}
-            selectedKeys={[current]}
-            mode="horizontal"
-            items={items}
-            className="area-menu"
-        />
-    );
+  return (
+    <Menu
+      onClick={onclick}
+      selectedKeys={[current]}
+      mode="horizontal"
+      items={items}
+      className="area-menu"
+    />
+  );
 }
 
 export default AreaMenu;

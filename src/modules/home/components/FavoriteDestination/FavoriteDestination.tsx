@@ -10,49 +10,49 @@ import AreaList from "./AreaList/AreaList";
 type MenuItem = GetProp<MenuProps, "items">[number];
 
 const items: MenuItem[] = [
-    {
-        label: (
-            <div className="flex items-center gap-2">
-                <span>
-                    <ICBed fillColor="#333" />
-                </span>
-                <span>Khu vực</span>
-            </div>
-        ),
-        key: "area",
-    },
-    {
-        label: (
-            <div className="flex items-center gap-2">
-                <span>
-                    <ICPlane fillColor="#333" />
-                </span>
-                <span>Thành phố</span>
-            </div>
-        ),
-        key: "city",
-    },
-    {
-        label: (
-            <div className="flex items-center gap-2">
-                <span>
-                    <ICCar fillColor="#333" />
-                </span>
-                <span>Địa điểm được quan tâm</span>
-            </div>
-        ),
-        key: "place",
-    },
+  {
+    label: (
+      <div className="flex items-center gap-2">
+        <span>
+          <ICBed fillColor="#333" />
+        </span>
+        <span>Khu vực</span>
+      </div>
+    ),
+    key: "area",
+  },
+  {
+    label: (
+      <div className="flex items-center gap-2">
+        <span>
+          <ICPlane fillColor="#333" />
+        </span>
+        <span>Thành phố</span>
+      </div>
+    ),
+    key: "city",
+  },
+  {
+    label: (
+      <div className="flex items-center gap-2">
+        <span>
+          <ICCar fillColor="#333" />
+        </span>
+        <span>Địa điểm được quan tâm</span>
+      </div>
+    ),
+    key: "place",
+  },
 ];
 
 function FavoriteDestination() {
-    return (
-        <div className="mt-6">
-            <ItemsHead title="Các điểm đến được chúng tôi ưa thích" />
-            <AreaMenu items={items} />
-            <AreaList />
-        </div>
-    );
+  return (
+    <div className="mt-6">
+      <ItemsHead title="Các điểm đến được chúng tôi ưa thích" />
+      <AreaMenu items={items} />
+      <AreaList />
+    </div>
+  );
 }
 
 export default FavoriteDestination;
