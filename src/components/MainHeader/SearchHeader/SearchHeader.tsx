@@ -1,6 +1,7 @@
 import React from "react";
 
 function SearchHeader() {
+
   return (
     <div className="container max-w-[1110px] px-2 mx-auto py-14">
       <div className="">

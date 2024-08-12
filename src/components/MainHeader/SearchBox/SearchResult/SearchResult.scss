@@ -1,0 +1,26 @@
+@import "../../../../styles/globals.scss";
+
+
+.search-value-hover, .search-value-active{
+    position: relative!important;
+
+}
+.search-value-active::before, .search-value-hover::before{
+    content: '';
+    display: none;  
+    background-color: $hightligted-hover;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 -12px;// = padding mặc định của popup
+    opacity: 1;
+}
+
+.search-value-active::before, .search-value-hover:hover::before{
+    display: block!important;
+    transition: all 0.15s;
+}
+

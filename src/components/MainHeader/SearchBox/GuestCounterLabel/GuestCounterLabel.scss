@@ -1,0 +1,13 @@
+@import "../../../../styles/globals.scss";
+.counter-label{
+    &:hover{
+        outline: 1px solid $search-box-hover-border!important;
+    }
+}
+
+@media(max-width: 900px){
+    .counter-label{
+        width: 100%!important;
+        min-height: 52px!important;
+    }
+}

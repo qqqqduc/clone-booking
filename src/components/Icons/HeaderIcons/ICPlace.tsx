@@ -7,9 +7,9 @@ interface IPlaneSvg {
 }
 
 function ICPlace({
-  width = "20",
-  height = "20",
-  fillColor = " #fff",
+    width = "20px",
+    height = "20px",
+    fillColor = " #fff",
 }: IPlaneSvg) {
   return (
     <svg

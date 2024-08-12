@@ -1,0 +1,6 @@
+@import "../../../../styles/globals.scss";
+.calendar-label{
+    &:hover{
+        outline: 1px solid $search-box-hover-border!important;
+    }
+}

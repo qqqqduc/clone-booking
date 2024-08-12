@@ -1,0 +1,14 @@
+@import "../../../../styles/globals.scss";
+.custom-location-label{
+    width: calc(100% - 54% - 35px);
+    &:hover{
+        outline: 1px solid $search-box-hover-border!important;
+    }
+}
+
+
+@media(max-width: 900px){
+    .custom-location-label{
+        width: 100%!important;
+    }
+}

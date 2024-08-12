@@ -1,0 +1,75 @@
+@import "../../../../styles/globals.scss";
+
+.custom-range-picker .ant-picker-suffix {
+  order: -1;
+  margin-right: 8px;
+}
+
+
+.custom-calender-panel {
+  border-bottom: 2px solid $component-background;
+  padding: 16px 34px;
+}
+
+//tùy chọn ClassName để chỉ thẻ bao 2 cái input
+.custom-range-picker {
+  background-color: white !important;
+  border-radius: 8px !important;
+}
+
+.custom-range-picker input::placeholder {
+  font-weight: 500;
+  color: $text-color-primary !important;
+}
+
+// tùy chọn popupclassname của thư viện để chỉ phần dropdown hiện lịch
+
+//css 2 nút chuyển về tháng trước
+.custom-range-picker-popup .ant-picker-header-super-prev-btn,
+.custom-range-picker-popup .ant-picker-header-prev-btn,
+.custom-range-picker-popup .ant-picker-header-super-next-btn {
+  display: none !important;
+}
+
+//css ô ngày giờ
+.custom-range-picker-popup .ant-picker-cell-inner {
+  width: 40px !important;
+  height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.custom-range-picker-popup .ant-picker-cell-disabled .ant-picker-cell-inner {
+  color: $text-color-disabled !important;
+}
+
+.custom-range-picker-popup .ant-picker-cell-disabled::before {
+  content: '';
+  width: 100% !important;
+  height: 75% !important;
+}
+
+.custom-range-picker-popup .ant-picker-cell-in-view::before {
+  content: '';
+  width: 100% !important;
+  height: 75% !important;
+}
+
+.custom-range-picker-popup .ant-picker-cell-range-start::before {
+  content: '';
+  background: none !important;
+}
+
+.custom-range-picker-popup .ant-picker-cell-range-end::before {
+  content: '';
+  background: none !important;
+}
+
+@media(max-width: 900px) {
+  .custom-range-picker {
+    width: 100% !important;
+    min-height: 52px !important;
+  }
+
+}
