@@ -6,6 +6,7 @@ import { routesList } from "@/routes/routesList";
 import _ from "lodash";
 import SearchHeader from "./SearchHeader/SearchHeader";
 import HeaderTop from "./HeaderTop/HeaderTop";
+import SearchBox from "./SearchBox/SearchBox";
 import "./MainHeader.scss";
 
 const { Header } = Layout;
@@ -16,15 +17,16 @@ function MainHeader() {
     (route) => route.path === pathname && route.isLoginPage
   );
 
-  return (
-    <Header className="custom-ant-header">
-      <div className="px-4">
-        <HeaderTop />
-        {!isLoginPage && <MenuHeaderBottom />}
-      </div>
-      {!isLoginPage && <SearchHeader />}
-    </Header>
-  );
-}
+    return (
+        <Header className="custom-header">
+            <div className="px-4">
+                <HeaderTop />
+                {!isLoginPage && <MenuHeaderBottom />}
+            </div>
+            {!isLoginPage && <SearchHeader />}
+
+            <SearchBox />
+        </Header>
+    );
 
 export default MainHeader;

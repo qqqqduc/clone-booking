@@ -1,0 +1,14 @@
+@import "../../styles/globals.scss";
+
+.quantity-selector{  
+    border: 1px solid #868686!important;
+}
+
+.quantity-selector-button{
+    &:hover{
+        background-color: rgba(0,108,228,0.06)!important;
+    }
+}
+.quantity-selector-disabled{
+    pointer-events: none!important;
+}
