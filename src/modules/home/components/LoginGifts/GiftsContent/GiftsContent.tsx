@@ -13,13 +13,13 @@ function GiftsContent() {
         <div className="flex gap-2">
           <a
             href="#"
-            className="text-white bg-blue-600 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-sm"
+            className="text-white bg-blue-600 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-sm transition-all duration-150"
           >
             <span>Đăng nhập</span>
           </a>
           <a
             href="#"
-            className="text-blue-600 hover:bg-gray-200  hover:text-blue-700 px-3 py-2 rounded-sm"
+            className="text-blue-600 hover:bg-gray-200  hover:text-blue-700 px-3 py-2 rounded-sm transition-all duration-150"
           >
             <span>Đăng ký</span>
           </a>

@@ -17,16 +17,16 @@ function MainHeader() {
     (route) => route.path === pathname && route.isLoginPage
   );
 
-    return (
-        <Header className="custom-header">
-            <div className="px-4">
-                <HeaderTop />
-                {!isLoginPage && <MenuHeaderBottom />}
-            </div>
-            {!isLoginPage && <SearchHeader />}
-
-            <SearchBox />
-        </Header>
-    );
+  return (
+    <Header className="custom-ant-header relative">
+      <div className="px-4">
+        <HeaderTop />
+        {!isLoginPage && <MenuHeaderBottom />}
+      </div>
+      {!isLoginPage && <SearchHeader />}
+      <SearchBox />
+    </Header>
+  );
+}
 
 export default MainHeader;

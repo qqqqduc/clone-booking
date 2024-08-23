@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import "./CounterPanel.scss";
-import QuantitySelector from '@/components/QuantitySelector/QuantitySelector';
+import QuantitySelector from '@/components/MainHeader/QuantitySelector/QuantitySelector';
 import { Switch } from 'antd';
 
 interface CounterProps {

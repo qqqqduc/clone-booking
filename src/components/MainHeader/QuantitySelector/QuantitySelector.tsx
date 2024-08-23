@@ -1,7 +1,7 @@
 import React from 'react';
 import "./QuantitySelector.scss";
-import ICMinus from '../Icons/CountableIcons/ICMinus';
-import ICPlus from '../Icons/CountableIcons/ICPlus';
+import ICMinus from '../../Icons/CountableIcons/ICMinus';
+import ICPlus from '../../Icons/CountableIcons/ICPlus';
   
 interface QuantitySelectorProps{
     maximun: number;

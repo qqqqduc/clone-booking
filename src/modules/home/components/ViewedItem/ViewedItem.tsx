@@ -5,7 +5,7 @@ import HouseType from "../HouseType/HouseType";
 function ViewedItem() {
   return (
     <div>
-      <div className="mt-6">
+      <div className="lg:mt-14 md:mt-[150px]">
         <ItemsHead
           title="Bạn có còn quan tâm đến những chỗ nghỉ này?"
           style="mb-3"

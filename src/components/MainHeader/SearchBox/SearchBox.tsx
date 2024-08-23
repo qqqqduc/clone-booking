@@ -3,8 +3,8 @@ import GuestCounterLabel from './GuestCounterLabel/GuestCounterLabel';
 import LocationLabel from './LocationLabel/LocationLabel';
 import BookingCalendar from './BookingCalendar/BookingCalendar';
 import { Dayjs } from 'dayjs';
-import "./SearchBox.scss";
 import { Alert, ConfigProvider } from 'antd';
+import "./SearchBox.scss";
 
 
 const SearchBox = () => {
@@ -37,37 +37,29 @@ const SearchBox = () => {
   }, [counter, isAllowedPet, searchValue, dates])
 
   return (
-    <div className='custom-search-box relative left-1/2 z-[3]'>
-      <div className='custom-search-box-layout flex gap-1 rounded-lg p-1 mt-6 mb-4'>
-
+    <div className='transform -translate-x-1/2 translate-y-14 lg:w-11/12 md:w-full md:px-2 absolute top-52 left-1/2 z-[3]'>
+      <div className='custom-search-box-layout bg-yellow-500 flex gap-1 rounded-lg p-1 mt-6 mb-4'>
         <LocationLabel
           searchValue={searchValue}
           setSearchValue={setSearchValue}
           setIsEmptySearchValue={setIsEmptySearchValue}
         />
-
         <BookingCalendar
           setDates={setDates}
         />
-
         <GuestCounterLabel
           counter={counter}
           setCounter={setCounter}
           isAllowedPet={isAllowedPet}
           setIsAllowedPet={setIsAllowedPet}
-
         />
-
         <button
           onClick={handleSubmit}
           type='submit'
-          className='search-box-button text-white cursor-pointer font-semibold rounded-md px-6 leading-4'>
+          className="search-box-button bg-blue-600 hover:bg-blue-900 text-white text-xl cursor-pointer font-semibold rounded-md px-6 leading-4 transition-all duration-150">
           Tìm
         </button>
-
-
       </div>
-
       {/*không cần quan tâm đoạn bên dưới*/}
       {
         isEmptySearchValue && 
@@ -84,7 +76,6 @@ const SearchBox = () => {
               transform: 'translateX(-50%)',
               top: '-8px'
             }}></div>
-
             <ConfigProvider
               theme={{
                 token: {
@@ -104,7 +95,6 @@ const SearchBox = () => {
                 type='error'
               />
             </ConfigProvider>
-
           </div>
         </div>
       }
