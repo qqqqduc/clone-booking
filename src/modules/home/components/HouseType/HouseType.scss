@@ -1,6 +1,6 @@
 @import "../../../../styles/globals.scss";
 
-.custom-antd-card {
+.custom-ant-card {
   position: relative;
   box-shadow: 0 2px 8px 0 rgba(26, 26, 26, 0.16);
 
@@ -29,6 +29,7 @@
     }
   }
   .ant-card-cover {
+    position: relative;
     height: 193px !important;
 
     img {

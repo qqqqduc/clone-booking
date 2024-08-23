@@ -2,7 +2,7 @@ import React from "react";
 
 function SearchHeader() {
   return (
-    <div className="container max-w-[1110px] px-2 mx-auto py-14">
+    <div className="lg:w-11/12 lg:px-4 md:px-2 mx-auto py-14">
       <div className="">
         <h1 className="text-white text-5xl font-extrabold">
           Tìm chỗ nghỉ tiếp theo

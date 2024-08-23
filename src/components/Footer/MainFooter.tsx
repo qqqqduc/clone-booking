@@ -1,6 +1,4 @@
-import React from "react";
 import { IRoutesList, routesList } from "@/routes/routesList";
-import { Divider } from "antd";
 import { Footer } from "antd/es/layout/layout";
 import { usePathname } from "next/navigation";
 import FooterTop from "./FooterTop/FooterTop";
@@ -14,9 +12,9 @@ function MainFooter() {
   return (
     <>
       {!isLoginPage && (
-        <Footer className="px-0">
+        <Footer className="flex flex-col gap-y-5 px-0">
           <FooterTop />
-          <Divider className="container max-w-[1110px] mx-auto px-2" />
+          <div className="bg-gray-200 lg:w-11/12 lg:mx-auto md:mx-3 h-[1px]"></div>
           <FooterBottom />
         </Footer>
       )}

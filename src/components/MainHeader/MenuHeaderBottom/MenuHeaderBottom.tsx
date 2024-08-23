@@ -86,7 +86,7 @@ function MenuHeaderBottom() {
       selectedKeys={[current]}
       mode="horizontal"
       items={items}
-      className="custom-menu-header-bottom container max-w-[1110px] mx-auto"
+      className="custom-menu-header-bottom lg:w-11/12 mx-auto"
     />
   );
 }

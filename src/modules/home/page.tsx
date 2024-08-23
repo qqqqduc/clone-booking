@@ -8,7 +8,7 @@ import GoodResortArea from "./components/GoodResortArea/GoodResortArea";
 import Discovery from "./components/Discovery/Discovery";
 import LoginGifts from "./components/LoginGifts/LoginGifts";
 import FavoriteDestination from "./components/FavoriteDestination/FavoriteDestination";
-import "./page.scss";
+import TopRestArea from "./components/TopRestArea/TopRestArea";
 
 export function Home() {
   return (
@@ -23,8 +23,8 @@ export function Home() {
       {/* COMPONENT LỌC THEO ĐỊA ĐIỂM */}
       <Discovery />
       <GoodResortArea />
+      <TopRestArea />
       <LoginGifts />
-      {/* KHÁM PHÁ CHỖ NGHỈ */}
       <FavoriteDestination />
     </div>
   );

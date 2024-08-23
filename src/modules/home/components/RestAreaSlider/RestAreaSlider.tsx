@@ -1,75 +1,36 @@
 import React from "react";
-import Carousel from "react-multi-carousel";
 import RestAreaType from "./RestAreaType/RestAreaType";
-import "react-multi-carousel/lib/styles.css";
-import "./RestAreaSlider.scss";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import _ from "lodash";
+import { ISliderListItems } from "@/types/type";
+import "swiper/css";
+import "swiper/css/navigation";
+import "./RestAreaType.scss";
 
 interface IProps {
   slideShow: number;
+  listSlider: ISliderListItems[];
 }
 
-function RestAreaSlider({ slideShow }: IProps) {
+function RestAreaSlider({ slideShow, listSlider }: IProps) {
+
   return (
-    <div>
-      <Carousel
-        additionalTransfrom={0}
-        arrows
-        autoPlaySpeed={3000}
-        centerMode={false}
-        className="custom-multi-carousel"
-        focusOnSelect={false}
-        infinite={false}
-        minimumTouchDrag={80}
-        pauseOnHover
-        renderArrowsWhenDisabled={false}
-        renderButtonGroupOutside={false}
-        renderDotsOutside={false}
-        responsive={{
-          desktop: {
-            breakpoint: {
-              max: 3000,
-              min: 1024,
-            },
-            items: slideShow,
-            partialVisibilityGutter: 40,
-          },
-          // mobile: {
-          //     breakpoint: {
-          //         max: 464,
-          //         min: 0,
-          //     },
-          //     items: 1,
-          //     partialVisibilityGutter: 30,
-          // },
-          // tablet: {
-          //     breakpoint: {
-          //         max: 1024,
-          //         min: 464,
-          //     },
-          //     items: 2,
-          //     partialVisibilityGutter: 30,
-          // },
-        }}
-        rewind={false}
-        rewindWithAnimation={false}
-        rtl={false}
-        shouldResetAutoplay
-        showDots={false}
-        slidesToSlide={1}
-        swipeable
-      >
-        <RestAreaType />
-        <RestAreaType />
-        <RestAreaType />
-        <RestAreaType />
-        <RestAreaType />
-        <RestAreaType />
-        <RestAreaType />
-        <RestAreaType />
-        <RestAreaType />
-        <RestAreaType />
-      </Carousel>
-    </div>
+    <Swiper
+      modules={[Navigation]} // Import module Pagination
+      navigation={true}
+      spaceBetween={20}
+      slidesPerView={slideShow}
+      onSwiper={(swiper) => console.log(swiper)}
+      onSlideChange={() => console.log("slide change")}
+      className="custom-swiper"
+    >
+      {listSlider.map((item: ISliderListItems, index: number) => (
+        <SwiperSlide key={index}>
+          <RestAreaType image={item.image} name={item.name} description={item.description} />
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 }
 

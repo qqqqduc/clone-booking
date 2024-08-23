@@ -22,9 +22,9 @@ function MainLayout({
       {isLoading ? (
         <div></div>
       ) : (
-        <Layout style={{ margin: 0, padding: 0, background: "#fff" }}>
+        <Layout className="m-0 p-0 bg-white">
           <MainHeader />
-          <Content className="container max-w-[1110px] mx-auto p-2">
+          <Content className="lg:w-11/12 md:w-full md:px-2 mx-auto">
             {children}
           </Content>
           <MainFooter />
