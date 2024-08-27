@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Layout } from "antd";
 import _ from "lodash";
 import MainHeader from "../MainHeader/MainHeader";
-import MainFooter from "../Footer/MainFooter";
+import MainFooter from "../MainFooter/MainFooter";
 
 const { Content } = Layout;
 

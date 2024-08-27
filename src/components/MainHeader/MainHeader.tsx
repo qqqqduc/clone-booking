@@ -23,8 +23,12 @@ function MainHeader() {
         <HeaderTop />
         {!isLoginPage && <MenuHeaderBottom />}
       </div>
-      {!isLoginPage && <SearchHeader />}
-      <SearchBox />
+      {!isLoginPage && (
+        <>
+          <SearchHeader />
+          <SearchBox />
+        </>
+      )}
     </Header>
   );
 }

@@ -12,20 +12,14 @@ body {
 }
 
 // background
-$header-background: #003b95;
+$header-background: #003b95; // blue-800
 $hover-background: #0f51ac;
 $component-background: #006ce4;
 $search-box-background: #ffb700;
-// font
-$font-size-sm: 0.875rem;
-$font-size-base: 1rem;
-$font-size-lg: 1.125rem;
-$font-size-xl: 1.25rem;
-$font-size-5xl: 3rem;
 
 // text color
-$text-color-primary: #1a1a1a;
-$text-color-description: #595959;
+$text-color-primary: #1a1a1a; //text-gray-900
+$text-color-description: #595959; //text-gray-500
 $text-color-disabled: #a2a2a2;
 
 //box shadow
