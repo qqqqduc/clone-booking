@@ -21,9 +21,6 @@ export function Home() {
 
   return (
     <div>
-      <button onClick={() => console.log(listRestArea.data)} className="mt-20">
-        log data
-      </button>
       {/* <Banner /> */}
       {/* <SearchLatest /> */}
       <ViewedItem />

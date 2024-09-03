@@ -5,7 +5,7 @@ import ItemsHead from "@/components/ItemsHead/ItemsHead";
 function ViewedItem() {
   return (
     <div>
-      <div className="lg:mt-14 md:mt-[150px]">
+      <div className="lg:mt-14 md:mt-48 sm:mt-48">
         <ItemsHead
           title="Bạn có còn quan tâm đến những chỗ nghỉ này?"
           style="mb-3"

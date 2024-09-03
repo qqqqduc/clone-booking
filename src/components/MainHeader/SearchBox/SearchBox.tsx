@@ -37,7 +37,7 @@ const SearchBox = () => {
   }, [counter, isAllowedPet, searchValue, dates])
 
   return (
-    <div className='transform -translate-x-1/2 translate-y-14 lg:w-11/12 md:w-full md:px-2 absolute top-52 left-1/2 z-[3]'>
+    <div className='transform -translate-x-1/2 translate-y-14 lg:w-11/12 md:w-full md:px-2 sm:w-full absolute top-52 left-1/2 z-[3]'>
       <div className='custom-search-box-layout bg-yellow-500 flex gap-1 rounded-lg p-1 mt-6 mb-4'>
         <LocationLabel
           searchValue={searchValue}
