@@ -1,7 +1,7 @@
 import React from "react";
 import BoxInformation from "./BoxInformation/BoxInformation";
-import ItemsHead from "../ItemsHead/ItemsHead";
 import "./SearchLatest.scss";
+import ItemsHead from "@/components/ItemsHead/ItemsHead";
 
 function SearchLatest() {
   return (

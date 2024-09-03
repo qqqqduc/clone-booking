@@ -1,7 +1,7 @@
 import React from "react";
-import ItemsHead from "../ItemsHead/ItemsHead";
 import RestAreaSlider from "../RestAreaSlider/RestAreaSlider";
 import { ISliderListItems } from "@/types/type";
+import ItemsHead from "@/components/ItemsHead/ItemsHead";
 
 function SearchRestAreaType() {
   const listRestArea: ISliderListItems[] = [

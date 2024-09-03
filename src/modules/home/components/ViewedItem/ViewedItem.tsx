@@ -1,6 +1,6 @@
 import React from "react";
-import ItemsHead from "../ItemsHead/ItemsHead";
 import HouseType from "../HouseType/HouseType";
+import ItemsHead from "@/components/ItemsHead/ItemsHead";
 
 function ViewedItem() {
   return (

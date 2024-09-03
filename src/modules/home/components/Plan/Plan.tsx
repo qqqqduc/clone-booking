@@ -1,10 +1,10 @@
 import React from "react";
-import ItemsHead from "../ItemsHead/ItemsHead";
 import { GetProp, MenuProps } from "antd";
 import ICBed from "@/components/Icons/HeaderIcons/ICBed";
 import ICPlane from "@/components/Icons/HeaderIcons/ICPlane";
 import ICCar from "@/components/Icons/HeaderIcons/ICCar";
 import PlanMenu from "./PlanMenu/PlanMenu";
+import ItemsHead from "@/components/ItemsHead/ItemsHead";
 
 type MenuItem = GetProp<MenuProps, "items">[number];
 

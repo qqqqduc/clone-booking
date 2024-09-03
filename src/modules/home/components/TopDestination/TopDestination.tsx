@@ -1,6 +1,6 @@
 import React from "react";
-import ItemsHead from "../ItemsHead/ItemsHead";
 import "./TopDestination.scss";
+import ItemsHead from "@/components/ItemsHead/ItemsHead";
 
 function TopDestination() {
   return (

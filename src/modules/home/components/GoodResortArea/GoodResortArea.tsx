@@ -1,7 +1,7 @@
 import React from "react";
-import ItemsHead from "../ItemsHead/ItemsHead";
 import ResortListSlider from "../ResortListSlider/ResortListSlider";
 import { ISliderListItems } from "@/types/type";
+import ItemsHead from "@/components/ItemsHead/ItemsHead";
 
 function GoodResortArea() {
   const listResort: ISliderListItems[] = [

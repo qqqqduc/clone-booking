@@ -21,8 +21,6 @@ function RestAreaSlider({ slideShow, listSlider }: IProps) {
       navigation={true}
       spaceBetween={20}
       slidesPerView={slideShow}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log("slide change")}
       className="custom-swiper"
     >
       {listSlider.map((item: ISliderListItems, index: number) => (

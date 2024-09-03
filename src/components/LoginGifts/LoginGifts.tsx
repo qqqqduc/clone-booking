@@ -1,6 +1,6 @@
 import React from "react";
-import ItemsHead from "../ItemsHead/ItemsHead";
 import GiftsContent from "./GiftsContent/GiftsContent";
+import ItemsHead from "../ItemsHead/ItemsHead";
 
 function LoginGifts() {
   return (

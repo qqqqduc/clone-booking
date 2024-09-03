@@ -50,14 +50,14 @@ const items: MenuItem[] = [
   },
   {
     label: (
-      <Link href={"/place"} className="flex items-center gap-2">
+      <Link href={"/attractions"} className="flex items-center gap-2">
         <span>
           <ICPlace />
         </span>
         <span>Địa điểm tham quan</span>
       </Link>
     ),
-    key: "/place",
+    key: "/attractions",
   },
   {
     label: (
