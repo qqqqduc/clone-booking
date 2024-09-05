@@ -1,0 +1,31 @@
+@import "../../../../../styles/globals.scss";
+
+
+.category-item-btn {
+    background-color: $component-background;
+    border-color: $component-background;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    width: calc(100% - 32px);
+    &:hover{
+        background-color: $blue-hover;
+        border-color: $blue-hover;
+    }
+}
+.last-category-item{
+    border: none!important;
+}
+@media (max-width: 1023px){
+    .category-item-content {
+        border: 1px solid #e7e7e7;
+        display: flex;
+        align-items: center;
+    }
+}
+@media (min-width: 1024px){
+    .category-item-content {
+        border-right: 1px solid #e7e7e7;
+    }
+}

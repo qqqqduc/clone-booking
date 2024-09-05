@@ -20,7 +20,7 @@ const QuantitySelector: React.FC<QuantitySelectorProps> = ({
 }) => {
 
   return (
-    <div className='quantity-selector flex items-center rounded-lg h-[40px]'>
+    <div className='quantity-selector flex items-center rounded-lg h-[40px] w-[max-content]'>
         <button 
             className={
                 `quantity-selector-button cursor-pointer w-[40px] h-[40px] py-1 px-3

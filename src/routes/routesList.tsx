@@ -16,4 +16,13 @@ export const routesList: IRoutesList[] = [
     path: "/stay",
     isLoginPage: false,
   },
+  {
+    path: "/listing/category",
+    isLoginPage: true,
+  },
+  {
+    path: "/listing/create-listing",
+    isLoginPage: true,
+  },
+
 ];
