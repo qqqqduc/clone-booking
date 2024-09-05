@@ -1,17 +1,15 @@
 @import "../../../styles/globals.scss";
 
 // hạ sách khi config bằng token nhưng không hoạt động
-.custom-search-error .ant-alert-message{
-    color: white!important;
+.custom-search-error .ant-alert-message {
+  color: white !important;
 }
 
-@media(max-width: 900px){
-    .custom-search-box-layout{
-     flex-direction: column!important;
-    }
-    .search-box-button{
-     min-height: 52px;
-    }
- }
-
-
+@media (max-width: 900px) {
+  .custom-search-box-layout {
+    flex-direction: column !important;
+  }
+  .search-box-button {
+    min-height: 52px;
+  }
+}

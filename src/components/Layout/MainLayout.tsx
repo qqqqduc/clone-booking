@@ -24,7 +24,7 @@ function MainLayout({
       ) : (
         <Layout className="m-0 p-0 bg-white">
           <MainHeader />
-          <Content className="lg:w-11/12 md:w-full md:px-2 mx-auto">
+          <Content className="lg:w-11/12 md:w-full md:px-2 mx-auto sm:w-full">
             {children}
           </Content>
           <MainFooter />

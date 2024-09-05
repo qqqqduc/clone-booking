@@ -1,0 +1,16 @@
+.custom-expand-question {
+  width: 100%;
+  overflow:  hidden !important;
+
+  .ant-collapse-header {
+    color: #1a1a1a !important;
+    font-weight: 600;
+    background-color: #fff !important;
+  }
+
+  .ant-collapse-content {
+    .ant-collapse-content-box {
+        background-color: #fff !important;
+    }
+  }
+}

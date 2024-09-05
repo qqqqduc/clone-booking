@@ -1,6 +1,7 @@
 import LoginGifts from "@/components/LoginGifts/LoginGifts";
 import React from "react";
 import CustomerCare from "./components/CustomerCare/CustomerCare";
+import ExpandQuestion from "./components/ExpandQuestion/ExpandQuestion";
 
 interface ICustomerCare {
   image: string;
@@ -45,6 +46,9 @@ export function Cars() {
             />
           </div>
         ))}
+      </div>
+      <div className="my-10">
+        <ExpandQuestion />
       </div>
     </div>
   );
