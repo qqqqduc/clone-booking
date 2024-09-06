@@ -12,7 +12,7 @@ interface IProps {
 function InnerBox({ image, title, point, count, price }: IProps) {
   return (
     <div
-      className="flex flex-col justify-end h-[366px] p-4 rounded-lg bg-no-repeat bg-center bg-cover"
+      className="flex flex-col justify-end h-[366px] p-4 rounded-lg bg-no-repeat bg-center bg-cover hover:cursor-pointer"
       style={{backgroundImage: `url(${image})`}}
     >
       <div className="text-white font-semibold">{title}</div>

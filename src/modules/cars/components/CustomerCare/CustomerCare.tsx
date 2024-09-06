@@ -19,8 +19,8 @@ function CustomerCare({ image, title, description }: IProps) {
         <div className="text-gray-900 font-bold text-base">
           {title}
         </div>
-        <div className="text-gray-500">
-          description
+        <div className="text-gray-500 text-justify">
+          {description}
         </div>
       </div>
     </div>
