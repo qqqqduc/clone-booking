@@ -14,7 +14,7 @@ const { Header } = Layout;
 function MainHeader() {
   const pathname = usePathname();
   const isLoginPage = routesList.find(
-    (route) => route.path === pathname && route.isLoginPage
+    (route) => pathname.includes(route.path) && route.isLoginPage
   );
 
   return (

@@ -50,7 +50,7 @@ function Recommend() {
   ];
 
   return (
-    <div className="mt-6">
+    <div className="mt-10">
       <ItemsHead
         title="Được gợi ý ở Hà Nội"
         description="Những trải nghiệm hàng đầu ở Hà Nội để bạn bắt đầu"

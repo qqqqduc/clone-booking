@@ -7,7 +7,7 @@ import FooterBottom from "./FooterBottom/FooterBottom";
 function MainFooter() {
   const pathname = usePathname();
   const isLoginPage = routesList.find(
-    (route: IRoutesList) => route.path === pathname && route.isLoginPage
+    (route: IRoutesList) => pathname.includes(route.path) && route.isLoginPage
   );
   return (
     <>
