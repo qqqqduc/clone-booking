@@ -50,9 +50,7 @@ export function Attractions() {
                 <img src={item.image} alt="" />
               </div>
               <div className="basis-4/6">
-                <div className="text-gray-900 font-bold text-base">
-                  {item.title}
-                </div>
+                <div className="font-bold text-base">{item.title}</div>
                 <div className="text-gray-500 text-justify text-xs">
                   {item.description}
                 </div>
@@ -62,10 +60,12 @@ export function Attractions() {
         </div>
       </div>
       <div className="rounded-lg border border-gray-200 p-4 my-10">
-        <div className="text-gray-900">
+        <div className="">
           Hãy cho chúng tôi biết phản hồi và góp ý của bạn về chất lượng dịch vụ
         </div>
-        <div className="text-blue-600 hover:underline hover:cursor-pointer">Gửi đề xuất</div>
+        <div className="text-blue-600 hover:underline hover:cursor-pointer">
+          Gửi đề xuất
+        </div>
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import ICHeart from "@/components/Icons/HeaderIcons/ICHeart";
 import HouseQuantity from "./HouseQuantity/HouseQuantity";
 import Image from "next/image";
 import "./HouseType.scss";
+import { useRouter } from "next/navigation";
 
 interface IProps {
   image: string;
@@ -25,18 +26,16 @@ function HouseType({
   review,
   priceElement,
 }: IProps) {
+  const router = useRouter();
+
   return (
     <Card
       extra={<ICHeart fillColor="#333" />}
       cover={
-        <Image
-          fill
-          alt="example" 
-          src={image}
-          className="object-contain"
-        />
+        <Image fill alt="example" src={image} className="object-contain" />
       }
       className="custom-ant-card"
+      onClick={() => router.push("/hotel/1")}
     >
       <Meta title={name} description={description} />
       <HouseQuantity point={point} rank={rank} review={review} />

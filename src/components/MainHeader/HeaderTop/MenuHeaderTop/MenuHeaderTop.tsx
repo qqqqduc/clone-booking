@@ -106,7 +106,7 @@ function MenuHeaderTop() {
                 <Menu.Item key="account" className="ant-custom-menu-item">
                     <div className="flex items-center gap-2 p-0">
                         <div>
-                            <AntCustomAvatar />
+                            <Avatar style={{ backgroundColor: "#f56a00" }}>K</Avatar>
                         </div>
                         <div className="flex flex-col">
                             <span className="text-sm">Tên</span>

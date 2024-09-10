@@ -16,7 +16,7 @@ function CustomerCare({ image, title, description }: IProps) {
         />
       </div>
       <div className="flex flex-col justify-center">
-        <div className="text-gray-900 font-bold text-base">
+        <div className="font-bold text-base">
           {title}
         </div>
         <div className="text-gray-500 text-justify">

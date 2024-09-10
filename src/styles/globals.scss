@@ -13,8 +13,8 @@ body {
 
 // background
 $header-background: #003b95; // blue-800
-$hover-background: #0f51ac;
-$component-background: #006ce4;
+$hover-background: #0f51ac; // blue-600
+$component-background: #006ce4; // blue-500
 $search-box-background: #ffb700;
 
 // text color
@@ -29,7 +29,7 @@ $box-shadow-200: 0 2px 16px 0 rgba(26,26,26,0.24);
 $width-primary: 1100px;
 
 //border color
-$border-color: #868686;
+$border-color: #868686; // gray-200
 $search-box-hover-border: #f56700;
 
 //hover color

@@ -17,7 +17,7 @@ function RestAreaType({ image, name, description }: IProps) {
           className="w-full object-contain"
         />
       </div>
-      <div className="mt-2 text-base font-bold text-gray-900">{name}</div>
+      <div className="mt-2 text-base font-bold">{name}</div>
       <div className="text-gray-600 text-sm">{description}</div>
     </Link>
   );

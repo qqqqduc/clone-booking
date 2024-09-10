@@ -1,7 +1,7 @@
 function FooterTop() {
   return (
     <div className="lg:w-11/12 lg:px-0 md:px-7 mx-auto mb-12">
-      <ul className="flex justify-between text-gray-900 text-sm">
+      <ul className="flex justify-between text-sm">
         <li className="flex flex-col gap-3 max-w-48 pr-3">
           <div>
             <strong>Hỗ trợ</strong>
