@@ -1,0 +1,11 @@
+.content-action {
+  &:hover {
+    cursor: pointer;
+    div {
+      color: #006ce4;
+    }
+    .action-route {
+      text-decoration: underline;
+    }
+  }
+}

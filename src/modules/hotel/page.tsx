@@ -1,41 +1,22 @@
 import React from "react";
-import { Checkbox } from "antd";
-import type { CheckboxProps } from "antd";
-
-const onChange: CheckboxProps["onChange"] = (e) => {
-  console.log(`checked = ${e.target.checked}`);
-};
+import HotelItem from "./HotelItem/ItemBox";
+import _ from "lodash";
+import FilterHotel from "./FilterHotel/FilterHotel";
 
 export function Hotel() {
   return (
-    <div className="flex mt-10">
+    <div className="flex gap-4 my-10">
       <div className="basis-1/4">
-        <div className="border border-gray-200 rounded-lg">
-          <div className="font-bold border-b border-gray-200 p-2 text-base">
-            Chọn lọc theo:
-          </div>
-          <div className="p-3">
-            <div className="font-bold">Dùng các bộc lọc cũ</div>
-            <div className="flex justify-between py-[6px]">
-              <Checkbox onChange={onChange} className="text-xs">Nhà nghỉ mát</Checkbox>
-              <span className="text-xs text-gray-500">10</span>
-            </div>
-            <div className="flex justify-between py-[6px]">
-              <Checkbox onChange={onChange} className="text-xs">Nhà nghỉ mát</Checkbox>
-              <span className="text-xs text-gray-500">10</span>
-            </div>
-            <div className="flex justify-between py-[6px]">
-              <Checkbox onChange={onChange} className="text-xs">Nhà nghỉ mát</Checkbox>
-              <span className="text-xs text-gray-500">10</span>
-            </div>
-            <div className="flex justify-between py-[6px]">
-              <Checkbox onChange={onChange} className="text-xs">Nhà nghỉ mát</Checkbox>
-              <span className="text-xs text-gray-500">10</span>
-            </div>
-          </div>
+        <FilterHotel />
+      </div>
+      <div className="basis-3/4">
+        <h3 className="font-bold label-xl">
+          Ninh Thuận: tìm thấy 128 chỗ nghỉ
+        </h3>
+        <div>
+          <HotelItem />
         </div>
       </div>
-      <div className="basis-3/4"></div>
     </div>
   );
 }

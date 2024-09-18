@@ -1,17 +1,12 @@
 import { Avatar } from "antd";
 import React from "react";
+import ReviewBox from "../../ReviewBox/ReviewBox";
 
 function ContentRight() {
   return (
     <div className="basis-1/4 w-full h-full flex flex-col rounded border border-gray-200">
-      <div className="flex gap-2 p-3 justify-end items-center">
-        <div className="flex flex-col">
-          <span className=" font-medium">Tuyệt vời</span>
-          <span className="text-gray-500 text-xs">75 đánh giá</span>
-        </div>
-        <div className="flex items-center px-1 rounded-t rounded-r bg-blue-800 text-white text-base font-medium w-8 h-8">
-          8.6
-        </div>
+      <div className="p-3">
+        <ReviewBox />
       </div>
       <div className="p-3 border-t border-b border-gray-200">
         <div className="text-xs  font-medium">

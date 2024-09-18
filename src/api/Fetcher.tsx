@@ -1,3 +1,4 @@
+import Config from "../config/config";
 import store from "@/redux/store";
 import axios, { AxiosRequestConfig } from "axios";
 
@@ -16,15 +17,13 @@ export async function fetcher<T>(
   // options?: IFetcherOptions
 ): Promise<T> {
   const token = store.getState();
-  const timeout = process.env.NEXT_PUBLIC_TIMEOUT
-    ? parseInt(process.env.NEXT_PUBLIC_TIMEOUT, 10)
-    : undefined;
+  const timeout = Config.CONFIG_API.TIMEOUT;
   const instance = axios.create({
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-    baseURL: process.env.NEXT_PUBLIC_BASE_URL_API,
+    baseURL: Config.CONFIG_API.API_BASE_URL,
     timeout: timeout,
   });
   if (token) {
