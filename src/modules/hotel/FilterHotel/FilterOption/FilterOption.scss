@@ -1,0 +1,18 @@
+.filter-option {
+  padding: 12px;
+
+  .custom-ant-checkbox-group {
+    display: flex !important;
+    flex-direction: column !important;
+
+    .ant-checkbox-group-item {
+      position: relative;
+
+      .ant-checkbox {
+        .ant-checkbox-inner {
+          border: 1px solid #868686 !important;
+        }
+      }
+    }
+  }
+}

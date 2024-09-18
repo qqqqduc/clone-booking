@@ -1,6 +1,13 @@
-export enum EInputType {
-  SEARCH_REST_AREA = 0,
-  DISCOVERY = 2,
+import { ReactElement } from "react";
+
+export enum ESettingsType {
+  PERSONAL = "personal",
+  PREFERENCES = "preferences",
+  SECURITY = "security",
+  PAYMENT = "payment",
+  PRIVACY = "privacy",
+  NOTIFICATIONS = "notifications",
+  OTHER_TRAVELERS = "other-travelers",
 }
 
 export interface ISliderListItems {
@@ -11,4 +18,9 @@ export interface ISliderListItems {
   rank?: string;
   review?: string;
   price?: string;
+}
+
+export interface IFilterOptions {
+  label: ReactElement;
+  value: string;
 }

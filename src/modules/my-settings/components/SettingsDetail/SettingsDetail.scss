@@ -1,0 +1,9 @@
+.select-tab {
+  &:hover {
+    cursor: pointer;
+    .select-content {
+      color: #006ce4;
+      text-decoration: underline;
+    }
+  }
+}

@@ -9,7 +9,7 @@ interface IProps {
 
 function RestAreaType({ image, name, description }: IProps) {
   return (
-    <Link href="#" className="house-item inline-block w-full">
+    <Link href="/hotel" className="house-item inline-block w-full">
       <div className="rounded-lg overflow-hidden">
         <img
           src={image}
