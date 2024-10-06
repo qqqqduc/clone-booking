@@ -1,26 +1,38 @@
-import "./BasicInfo.scss";
-interface ListingNameProps {}
-function ListingName({}: ListingNameProps) {
+import { FieldValues, UseFormRegister, FieldErrors } from "react-hook-form";
+
+import Heading from "../Heading";
+import Input from "../Input";
+import "../Component.scss";
+
+interface ListingNameProps {
+  register: UseFormRegister<FieldValues>;
+  errors: FieldErrors<FieldValues>;
+}
+
+function ListingName({
+  register,
+  errors 
+}: ListingNameProps) {
   return (
     <>
-      <div className="mt-8">
-        <h1 className="text-2xl font-bold text-gray-800">
-          Tên chỗ nghỉ Quý vị?
-        </h1>
-      </div>
-
-      <div className="py-12 px-4">
-        <label className="block text-gray-700 mb-1" htmlFor="propertyName">
-          Tên chỗ nghỉ
-        </label>
-
-        <input
-          type="text"
-          id="propertyName"
-          className="basic-info-input mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-          placeholder="Tên chỗ nghỉ"
-        />
-      </div>
+      <Heading  
+        title = "Tên chỗ nghỉ quý vị" 
+        size = "3xl"
+        bottom = {6}
+      />
+      <Input 
+        title="Tên chỗ nghỉ"
+        id="title" 
+        register={register}
+        errors={errors}
+        config={{
+          required: "Tên chỗ nghỉ không được để trống",
+          minLength: {
+            value: 3,
+            message: "Tên chỗ nghỉ phải dài hơn 3 kí tự",
+          },
+        }}
+      />
     </>
   );
 }

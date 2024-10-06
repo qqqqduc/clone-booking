@@ -1,74 +1,122 @@
-import "./ListingSetting.scss";
+import React, { useState } from "react";
+import { Select } from "antd";
+import { FieldValues, UseFormSetValue } from "react-hook-form";
 
-interface ListingRulesProps {}
+import Heading from "./../Heading";
+import "../Component.scss";
 
-function ListingRules({}: ListingRulesProps) {
+const { Option } = Select;
+
+interface ListingRulesProps {
+  setValue: UseFormSetValue<FieldValues>;
+}
+
+function ListingRules({ setValue }: ListingRulesProps) {
+  const [checkInTime, setCheckInTime] = useState({
+    from: "11:00",
+    to: "12:00",
+  });
+  const [checkOutTime, setCheckOutTime] = useState({
+    from: "11:00",
+    to: "12:00",
+  });
+
+  const generateTimeOptions = () => {
+    const options = [];
+    for (let hour = 0; hour <= 24; hour++) {
+      const timeString = `${hour < 10 ? `0${hour}` : hour}:00`;
+      options.push(
+        <Option key={timeString} value={timeString}>
+          {timeString}
+        </Option>
+      );
+    }
+    return options;
+  };
+
+  const handleTimeChange = (
+    type: string,
+    field: "from" | "to",
+    value: string
+  ) => {
+    const updatedTime =
+      type === "checkIn" ? { ...checkInTime } : { ...checkOutTime };
+    updatedTime[field] = value;
+
+    // Kiểm tra xem thời gian "to" có nhỏ hơn "from" không, nếu có thì đảo ngược lại
+    if (updatedTime.from > updatedTime.to) {
+      const temp = updatedTime.from;
+      updatedTime.from = updatedTime.to;
+      updatedTime.to = temp;
+    }
+
+    // Cập nhật lại giá trị
+    if (type === "checkIn") {
+      setCheckInTime(updatedTime);
+      setValue("checkInTime", updatedTime);
+    } else {
+      setCheckOutTime(updatedTime);
+      setValue("checkOutTime", updatedTime);
+    }
+    console.log(updatedTime);
+  };
+
   return (
     <>
-      <h1 className="text-3xl font-bold mb-6">Quy định chung</h1>
-      <div className="bg-white custom-room-setting-shadow py-6 px-4">
-        {/* Các điều khoản cho phép */}
+      <Heading title="Quy định chung" size="3xl" bottom={6} />
+      <div className="bg-white shadow p-6 rounded-lg p-6">
+        {/* Thời gian nhận phòng */}
         <div className="mb-6">
-          <div className="flex justify-between items-center mb-4">
-            <span>Cho phép hút thuốc</span>
-            <input type="checkbox" className="toggle-checkbox" />
-          </div>
-          <div className="flex justify-between items-center mb-4">
-            <span>Cho phép vật nuôi</span>
-            <input type="checkbox" className="toggle-checkbox" />
-          </div>
-          <div className="flex justify-between items-center mb-4">
-            <span>Cho phép tiệc tùng/sự kiện</span>
-            <input type="checkbox" className="toggle-checkbox" />
+          <label className="block mb-2 text-lg font-semibold">Nhận phòng</label>
+          <div className="flex gap-4">
+            <div className="w-full">
+              <label className="block text-sm mb-1">Từ</label>
+              <Select
+                value={checkInTime.from}
+                style={{ width: "100%" }}
+                onChange={(value) => handleTimeChange("checkIn", "from", value)}
+              >
+                {generateTimeOptions()}
+              </Select>
+            </div>
+            <div className="w-full">
+              <label className="block text-sm mb-1">Đến</label>
+              <Select
+                value={checkInTime.to}
+                style={{ width: "100%" }}
+                onChange={(value) => handleTimeChange("checkIn", "to", value)}
+              >
+                {generateTimeOptions()}
+              </Select>
+            </div>
           </div>
         </div>
 
-        <hr className="border-gray-300 mb-6" />
-
-        {/* Thời gian nhận phòng */}
-        <div className="grid grid-cols-2 gap-4 mb-6">
-          <div>
-            <label className="block mb-2 text-lg font-semibold">
-              Nhận phòng
-            </label>
-            <div className="flex gap-4">
-              <div className="w-full">
-                <label className="block text-sm mb-1">Từ</label>
-                <select className="w-full border-gray-300 rounded-md p-2">
-                  <option>15:00</option>
-                  <option>14:00</option>
-                </select>
-              </div>
-              <div className="w-full">
-                <label className="block text-sm mb-1">Đến</label>
-                <select className="w-full border-gray-300 rounded-md p-2">
-                  <option>18:00</option>
-                  <option>19:00</option>
-                </select>
-              </div>
+        {/* Thời gian trả phòng */}
+        <div className="mb-6">
+          <label className="block mb-2 text-lg font-semibold">Trả phòng</label>
+          <div className="flex gap-4">
+            <div className="w-full">
+              <label className="block text-sm mb-1">Từ</label>
+              <Select
+                value={checkOutTime.from}
+                style={{ width: "100%" }}
+                onChange={(value) =>
+                  handleTimeChange("checkOut", "from", value)
+                }
+              >
+                {generateTimeOptions()}
+              </Select>
             </div>
-          </div>
-
-          {/* Thời gian trả phòng */}
-          <div>
-            <label className="block mb-2 text-lg font-semibold">
-              Trả phòng
-            </label>
-            <div className="flex gap-4">
-              <div className="w-full">
-                <label className="block text-sm mb-1">Từ</label>
-                <select className="w-full border-gray-300 rounded-md p-2">
-                  <option>08:00</option>
-                  <option>07:00</option>
-                </select>
-              </div>
-              <div className="w-full">
-                <label className="block text-sm mb-1">Đến</label>
-                <select className="w-full border-gray-300 rounded-md p-2">
-                  <option>11:00</option>
-                  <option>12:00</option>
-                </select>
-              </div>
+            <div className="w-full">
+              <label className="block text-sm mb-1">Đến</label>
+              <Select
+                value={checkOutTime.to}
+                style={{ width: "100%" }}
+                onChange={(value) => handleTimeChange("checkOut", "to", value)}
+              >
+                {generateTimeOptions()}
+              </Select>
             </div>
           </div>
         </div>

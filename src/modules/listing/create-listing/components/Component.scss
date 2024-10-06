@@ -1,0 +1,43 @@
+@import "../../../../styles/globals.scss";
+.custom-required-input {
+  font-size: 12px !important;
+  color: $required-input-color !important;
+}
+.custom-create-listing-input:focus {
+  outline: none;
+  border-color: #006ce4 !important;
+}
+
+.create-listing-prev-button:hover {
+  background-color: #eff6fe !important;
+  transition: all 0.1s !important;
+}
+
+.create-listing-next-button:hover {
+  background-color: #0057b8 !important;
+  transition: all 0.1s !important;
+}
+
+.create-listing-bg {
+  background-color: #f9f9f9 !important;
+}
+
+
+.border-bottom-soft {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.ant-picker-cell-disabled {
+  .ant-picker-calendar-date-value {
+    color: #a2a2a2 !important;
+  }
+}
+.custom-create-listing-border {
+  border-bottom: 1px solid #ececec !important;
+}
+
+@media(max-width: 579px){
+  .create-listing-full-width{
+    min-width: 100vw;
+  }
+}

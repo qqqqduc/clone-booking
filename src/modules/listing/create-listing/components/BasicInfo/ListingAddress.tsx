@@ -1,54 +1,168 @@
-import "./BasicInfo.scss";
+import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { AutoComplete } from "antd";
+import ReactMapGL, { Marker } from "@goongmaps/goong-map-react";
+import {
+  FieldValues,
+  UseFormRegister,
+  FieldErrors,
+  UseFormSetValue,
+} from "react-hook-form";
+import Image from "next/image";
 
-interface ListingAddressProps {}
+import { queriesKey } from "@/api/react-query";
+import { getSuggestAddress, getCoordinates } from "@/api/ApiMap";
+import Heading from "../Heading";
+import Input from "../Input";
+import "../Component.scss";
 
-function ListingAddress({}: ListingAddressProps) {
+interface ListingAddressProps {
+  register: UseFormRegister<FieldValues>;
+  errors: FieldErrors<FieldValues>;
+  setValue: UseFormSetValue<FieldValues>;
+}
+
+interface Location {
+  lat: number;
+  lng: number;
+  name: string;
+}
+
+function ListingAddress({ register, errors, setValue }: ListingAddressProps) {
+  const [searchText, setSearchText] = useState("");
+  const [selectedLocation, setSelectedLocation] = useState<Location | null>(
+    null
+  );
+
+  const [viewport, setViewport] = useState({
+    latitude: 21.03072,
+    longitude: 105.85239,
+    zoom: 12,
+  });
+
+  const suggestAddress = useQuery({
+    queryKey: [queriesKey.GET_SUGGEST_ADDRESS, searchText],
+    queryFn: getSuggestAddress,
+    enabled: searchText.length > 3,
+  });
+
+  const handleSelect = async (value: string) => {
+    const place = suggestAddress.data.predictions.find(
+      (p: any) => p.description === value
+    );
+
+    if (place) {
+      const placeDetails = await getCoordinates(place.place_id);
+      const location = placeDetails.result.geometry.location;
+
+      setSelectedLocation({
+        lat: location.lat,
+        lng: location.lng,
+        name: value,
+      });
+
+      setViewport({
+        latitude: location.lat,
+        longitude: location.lng,
+        zoom: 14,
+      });
+      setValue("lat", location.lat);
+      setValue("lng", location.lng);
+    }
+  };
+
+  const handleSearch = (value: string) => {
+    setSearchText(value);
+  };
+
+  const options =
+    suggestAddress.data?.predictions?.map((item: any) => ({
+      value: item.description,
+    })) || [];
+
   return (
     <>
-      <h2 className="text-2xl font-bold mb-4">
-        Chỗ nghỉ Quý vị muốn đăng ký nằm ở đâu?
-      </h2>
-      <p className="text-gray-600 mb-6">
+      <Heading
+        title="Chỗ ở quý vị muốn đăng kí ở vị trí nào?"
+        bottom={6}
+        size="3xl"
+      />
+      <p className="text-gray-500 mb-6">
         Quý vị hãy đảm bảo cung cấp địa chỉ chính xác – thông tin này sẽ khó
         thay đổi sau đó.
       </p>
 
       <div className="mb-4">
-        <label className="block text-gray-700 mb-1" htmlFor="street">
-          Tên đường và số nhà
+        <label
+          className="block text-gray-700 mb-1 font-medium"
+          htmlFor="address"
+        >
+          Địa chỉ
         </label>
-        <input
-          id="street"
-          type="text"
-          className="w-full outline-none border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-500"
-          placeholder=""
-        />
+        <AutoComplete
+          options={options}
+          onSearch={handleSearch}
+          style={{ width: "100%" }}
+          onSelect={handleSelect}
+        >
+          <input
+            id="address"
+            type="text"
+            placeholder=""
+            {...register("address", {
+              required: "Địa chỉ không được để trống",
+            })}
+            className={`
+              w-full outline-none border border-gray-300 rounded-md p-2
+             ${!errors["address"] ? "focus:ring-2 focus:ring-blue-500" : ""}
+             ${errors["address"] ? "border-rose-500" : ""}
+             `}
+          />
+      
+        </AutoComplete>
       </div>
 
+      {errors["address"]?.message && (
+            <p className="text-rose-500 text-xs my-2">
+              {String(errors["address"].message)}
+            </p>
+      )}
 
       <div className="mb-4">
-        <label className="block text-gray-700 mb-1" htmlFor="postal-code">
-          Mã bưu chính
-        </label>
-        <input
-          id="postal-code"
-          type="text"
-          className="w-full outline-none border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-500"
-          placeholder=""
+        <Input
+          title="Mã bưu chính"
+          id="postalCode"
+          register={register}
+          errors={errors}
+          config={{
+            required: "Mã bưu chính không được để trống",
+          }}
         />
       </div>
 
-      <div className="mb-4">
-        <label className="block text-gray-700 mb-1" htmlFor="city">
-          Thành phố
-        </label>
-        <input
-          id="city"
-          type="text"
-          className="w-full outline-none border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-500"
-          placeholder=""
-        />
-      </div>
+      {selectedLocation && (
+        <ReactMapGL
+          {...viewport}
+          goongApiAccessToken={process.env.NEXT_PUBLIC_GOONG_MAPTILES_KEY}
+          width="100%"
+          height="400px"
+          onViewportChange={(newViewport: any) => setViewport(newViewport)}
+        >
+          <Marker
+            latitude={selectedLocation.lat}
+            longitude={selectedLocation.lng}
+            offsetLeft={-20}
+            offsetTop={-10}
+          >
+            <Image
+              width={35}
+              height={35}
+              alt="marker"
+              src="/img/map_marker.png"
+            />
+          </Marker>
+        </ReactMapGL>
+      )}
     </>
   );
 }

@@ -35,7 +35,7 @@ export async function fetcher<T>(
       .request(config)
       .then((response) => {
         if (response) {
-          resolve(response.data.data);
+          resolve(response.data);
         }
       })
       .catch((error) => {

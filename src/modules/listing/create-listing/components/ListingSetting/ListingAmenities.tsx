@@ -1,160 +1,105 @@
-import "./ListingSetting.scss";
-import QuantitySelector from "@/components/MainHeader/QuantitySelector/QuantitySelector";
+import { useState, useEffect } from "react";
+import { FieldValues, UseFormSetValue } from "react-hook-form";
 
-interface ListingAmenitiesProps {}
+import Heading from "../Heading";
+import CheckBox from "../CheckBox";
+import "../Component.scss";
 
-function ListingAmenities({}: ListingAmenitiesProps) {
+interface ListingAmenitiesProps {
+  setValue: UseFormSetValue<FieldValues>;
+}
+
+function ListingAmenities({ setValue }: ListingAmenitiesProps) {
+  const [checkedValues, setCheckedValues] = useState<string[]>([]);
+
+  useEffect(() => {
+    setValue("amenities", checkedValues);
+  }, [checkedValues, setValue]);
+
+  const handleCheckboxChange = (label: string, isChecked: boolean) => {
+    setCheckedValues((prev) => {
+      if (isChecked) {
+        // Nếu được check, thêm vào checkedValues
+        return [...prev, label];
+      } else {
+        // Nếu bỏ check, xóa khỏi checkedValues
+        return prev.filter((item) => item !== label);
+      }
+    });
+  };
+
   return (
     <>
-      <h1 className="text-3xl mb-8 font-bold text-gray-800">
-        Khách hàng có thể sử dụng gì tại chỗ nghỉ?
-      </h1>
-      <div className="bg-white custom-room-setting-shadow pt-4">
-        <h3 className="font-semibold text-lg pl-4 mt-4">Tiện nghi chung</h3>
+      <Heading
+        title="Khách hàng có thể sử dụng gì tại chỗ nghỉ?"
+        size="3xl"
+        bottom={6}
+      />
+      <div className="bg-white shadow p-6 rounded-lg">
+        <h3 className="font-medium text-lg mt-4 mb-2">Tiện nghi chung</h3>
 
-        <div className="space-y-2 px-4 py-2">
-          <div className="pb-6 border-bottom-soft">
-            <label className="flex items-center mb-[6px]">
-              <input
-                type="checkbox"
-                className="form-checkbox h-5 w-5 text-blue-600"
-              />
-              <span className="ml-2">Điều hòa nhiệt độ</span>
-            </label>
-            <label className="flex items-center mb-[6px]">
-              <input
-                type="checkbox"
-                className="form-checkbox h-5 w-5 text-blue-600"
-              />
-              <span className="ml-2">Hệ thống sưởi</span>
-            </label>
-            <label className="flex items-center mb-[6px]">
-              <input
-                type="checkbox"
-                className="form-checkbox h-5 w-5 text-blue-600"
-              />
-              <span className="ml-2">WiFi miễn phí</span>
-            </label>
-            <label className="flex items-center mb-[6px]">
-              <input
-                type="checkbox"
-                className="form-checkbox h-5 w-5 text-blue-600"
-              />
-              <span className="ml-2">Trạm sạc xe điện</span>
-            </label>
+        <div className="space-y-3">
+          <div className="pb-4 border-bottom-soft">
+            <CheckBox
+              label="Điều hòa nhiệt độ"
+              onChange={handleCheckboxChange}
+            />
+            <CheckBox label="Hệ thống sưởi" onChange={handleCheckboxChange} />
+            <CheckBox label="WiFi miễn phí" onChange={handleCheckboxChange} />
+            <CheckBox
+              label="Trạm sạc xe điện"
+              onChange={handleCheckboxChange}
+            />
           </div>
         </div>
 
         <div>
-          <h3 className="font-semibold text-lg pl-4 mt-4">
+          <h3 className="font-medium text-lg mt-4 mb-2">
             Nấu nướng và giặt rửa
           </h3>
-          <div className="space-y-2 px-4 py-2">
-            <div className="pb-6 border-bottom-soft">
-              <label className="flex items-center mb-[6px]">
-                <input
-                  type="checkbox"
-                  className="form-checkbox h-5 w-5 text-blue-600"
-                />
-                <span className="ml-2">Bếp</span>
-              </label>
-              <label className="flex items-center mb-[6px]">
-                <input
-                  type="checkbox"
-                  className="form-checkbox h-5 w-5 text-blue-600"
-                />
-                <span className="ml-2">Bếp nhỏ</span>
-              </label>
-              <label className="flex items-center mb-[6px]">
-                <input
-                  type="checkbox"
-                  className="form-checkbox h-5 w-5 text-blue-600"
-                />
-                <span className="ml-2">Máy giặt</span>
-              </label>
+          <div className="space-y-3">
+            <div className="pb-4 border-bottom-soft">
+              <CheckBox label="Bếp" onChange={handleCheckboxChange} />
+              <CheckBox label="Bếp nhỏ" onChange={handleCheckboxChange} />
+              <CheckBox label="Máy giặt" onChange={handleCheckboxChange} />
             </div>
           </div>
         </div>
 
         <div>
-          <h3 className="font-semibold text-lg pl-4 mt-4">Giải trí</h3>
-          <div className="space-y-2 px-4 py-2">
-            <div className="pb-6 border-bottom-soft">
-              <label className="flex items-center mb-[6px]">
-                <input
-                  type="checkbox"
-                  className="form-checkbox h-5 w-5 text-blue-600"
-                />
-                <span className="ml-2">TV màn hình phẳng</span>
-              </label>
-              <label className="flex items-center mb-[6px]">
-                <input
-                  type="checkbox"
-                  className="form-checkbox h-5 w-5 text-blue-600"
-                />
-                <span className="ml-2">Hồ bơi</span>
-              </label>
-              <label className="flex items-center mb-[6px]">
-                <input
-                  type="checkbox"
-                  className="form-checkbox h-5 w-5 text-blue-600"
-                />
-                <span className="ml-2">Bể sục</span>
-              </label>
-
-              <label className="flex items-center mb-[6px]">
-                <input
-                  type="checkbox"
-                  className="form-checkbox h-5 w-5 text-blue-600"
-                />
-                <span className="ml-2">Minibar</span>
-              </label>
-
-              <label className="flex items-center mb-[6px]">
-                <input
-                  type="checkbox"
-                  className="form-checkbox h-5 w-5 text-blue-600"
-                />
-                <span className="ml-2">Phòng xông hơi</span>
-              </label>
+          <h3 className="font-medium text-lg mt-4 mb-2">Giải trí</h3>
+          <div className="space-y-3">
+            <div className="pb-4 border-bottom-soft">
+              <CheckBox
+                label=" TV màn hình phẳng"
+                onChange={handleCheckboxChange}
+              />
+              <CheckBox label="Hồ bơi" onChange={handleCheckboxChange} />
+              <CheckBox label="Bể sục" onChange={handleCheckboxChange} />
+              <CheckBox label="Minibar" onChange={handleCheckboxChange} />
+              <CheckBox
+                label="Phòng xông hơi"
+                onChange={handleCheckboxChange}
+              />
             </div>
           </div>
         </div>
 
         <div>
-          <h3 className="font-semibold text-lg pl-4 mt-4">
+          <h3 className="font-medium text-lg mt-4 mb-2">
             Không gian ngoài trời và tầm nhìn
           </h3>
-          <div className="space-y-2 px-4 pt-2 pb-6" >
-            <label className="flex items-center mb-[6px]">
-              <input
-                type="checkbox"
-                className="form-checkbox h-5 w-5 text-blue-600"
-              />
-              <span className="ml-2">Ban công</span>
-            </label>
-            <label className="flex items-center mb-[6px]">
-              <input
-                type="checkbox"
-                className="form-checkbox h-5 w-5 text-blue-600"
-              />
-              <span className="ml-2">Nhìn ra vườn</span>
-            </label>
-            <label className="flex items-center mb-[6px]">
-              <input
-                type="checkbox"
-                className="form-checkbox h-5 w-5 text-blue-600"
-              />
-              <span className="ml-2">Sân thượng / hiên</span>
-            </label>
-
-            <label className="flex items-center mb-[6px]">
-              <input
-                type="checkbox"
-                className="form-checkbox h-5 w-5 text-blue-600"
-              />
-              <span className="ml-2">Tầm nhìn ra khung cảnh</span>
-            </label>
+          <div className="space-y-3">
+            <CheckBox label="Ban công" onChange={handleCheckboxChange} />
+            <CheckBox label="Nhìn ra vườn" onChange={handleCheckboxChange} />
+            <CheckBox
+              label="Sân thượng / hiên"
+              onChange={handleCheckboxChange}
+            />
+            <CheckBox
+              label="Tầm nhìn ra khung cảnh"
+              onChange={handleCheckboxChange}
+            />
           </div>
         </div>
       </div>

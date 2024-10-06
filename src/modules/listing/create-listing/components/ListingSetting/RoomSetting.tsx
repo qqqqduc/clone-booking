@@ -1,126 +1,169 @@
-import "./ListingSetting.scss";
+import { useState } from "react";
+
+import {
+  FieldValues,
+  UseFormRegister,
+  FieldErrors,
+  UseFormSetValue,
+} from "react-hook-form";
+
 import QuantitySelector from "@/components/MainHeader/QuantitySelector/QuantitySelector";
+import RadioCheckBox from "./../RadioCheckBox";
+import Heading from "./../Heading";
+import ErrorMessage from "../../components/ErrorMessage";
+import "../Component.scss";
 
-interface RoomSettingProps {}
+interface RoomSettingProps {
+  register: UseFormRegister<FieldValues>;
+  errors: FieldErrors<FieldValues>;
+  setValue: UseFormSetValue<FieldValues>;
+}
 
-function RoomSetting({}: RoomSettingProps) {
+function RoomSetting({ register, errors, setValue }: RoomSettingProps) {
+  const [allowChildren, setAllowChildren] = useState(true);
+  const [hasCrib, setHasCrib] = useState(false);
+
+  const [bedroomsCount, setBedroomsCount] = useState(1);
+  const [bathroomsCount, setBathroomsCount] = useState(1);
+  const [guestsCount, setGuestsCount] = useState(1);
+
+  const handleDecrease = (
+    setSelectedValue: React.Dispatch<React.SetStateAction<number>>,
+    selectedValue: number,
+    id: string
+  ) => {
+    setSelectedValue((preValue) => (preValue > 1 ? preValue - 1 : preValue));
+    setValue(id, selectedValue);
+  };
+
+  const handleIncrease = (
+    setSelectedValue: React.Dispatch<React.SetStateAction<number>>,
+    selectedValue: number,
+    id: string
+  ) => {
+    setSelectedValue((preValue) => preValue + 1);
+    setValue(id, selectedValue);
+  };
+
   return (
     <>
-      <h1 className="text-3xl mb-8 font-bold text-gray-800">
-        Chi tiết chỗ nghỉ
-      </h1>
-      <div className="py-6 px-4 bg-white custom-room-setting-shadow">
-        <div className="mb-8">
-          <label className="block text-base mb-2">
+      <Heading title="Chi tiết chỗ nghỉ" size="3xl" bottom={6} />
+      <div className="bg-white shadow p-6 rounded-lg">
+        <div className="mb-8"> 
+          <label className="block text-base mb-2 font-medium">
             Bao nhiêu khách có thể lưu trú?
           </label>
 
           <QuantitySelector
             minimun={1}
             maximun={30}
-            value={1}
-            onIncrease={() => {}}
-            onDecrease={() => {}}
+            value={guestsCount}
+            onIncrease={() =>
+              handleIncrease(setGuestsCount, guestsCount, "guestsCount")
+            }
+            onDecrease={() =>
+              handleDecrease(setGuestsCount, guestsCount, "guestsCount")
+            }
           />
         </div>
 
         <div className="mb-8">
-          <label className="block text-base mb-2">
+          <label className="block text-base mb-2 font-medium">
             Có bao nhiêu phòng ngủ?
           </label>
           <QuantitySelector
             minimun={1}
             maximun={10}
-            value={1}
-            onIncrease={() => {}}
-            onDecrease={() => {}}
+            value={bedroomsCount}
+            onIncrease={() =>
+              handleIncrease(setBedroomsCount, bedroomsCount, "bedroomsCount")
+            }
+            onDecrease={() =>
+              handleDecrease(setBedroomsCount, bedroomsCount, "bedroomsCount")
+            }
           />
         </div>
 
         <div className="mb-8">
-          <label className="block text-base mb-2">
+          <label className="block text-base mb-2 font-medium">
             Có bao nhiêu phòng tắm?
           </label>
           <QuantitySelector
             minimun={1}
             maximun={10}
-            value={1}
-            onIncrease={() => {}}
-            onDecrease={() => {}}
+            value={bathroomsCount}
+            onIncrease={() =>
+              handleIncrease(
+                setBathroomsCount,
+                bathroomsCount,
+                "bathroomsCount"
+              )
+            }
+            onDecrease={() =>
+              handleDecrease(
+                setBathroomsCount,
+                bathroomsCount,
+                "bathroomsCount"
+              )
+            }
           />
         </div>
 
         <div className="mb-8">
-          <label className="block text-base mb-2">
+          <span className="block text-base mb-2 font-medium">
             Quý vị có tiếp đón trẻ em không?
-          </label>
-          <div className="flex items-center space-x-4">
-            <label className="flex items-center">
-              <input
-                type="radio"
-                name="children"
-                className="form-radio text-blue-600"
-                checked
-              />
-              <span className="ml-2">Có</span>
-            </label>
-            <label className="flex items-center">
-              <input
-                type="radio"
-                name="children"
-                className="form-radio text-blue-600"
-              />
-              <span className="ml-2">Không</span>
-            </label>
-          </div>
+          </span>
+
+          <RadioCheckBox
+            setSelectedValue={setAllowChildren}
+            selectedValue={allowChildren}
+            inputName="allowChildren"
+            setValue={setValue}
+          />
         </div>
 
         <div className="mb-8">
-          <label className="block text-lg  mb-2">
-            Quý vị có cung cấp nôi (cũi) không?
-          </label>
-          <div className="text-md text-gray-500 mb-3">
-            Nôi (cũi) phù hợp cho phần lớn trẻ sơ sinh từ 0 - 3 tuổi và có thể
-            được cung cấp theo yêu cầu của khách.
-          </div>
-          <div className="flex items-center space-x-4">
-            <label className="flex items-center">
-              <input
-                type="radio"
-                name="crib"
-                className="form-radio text-blue-600"
-              />
-              <span className="ml-2">Có</span>
-            </label>
-            <label className="flex items-center">
-              <input
-                type="radio"
-                name="crib"
-                className="form-radio text-blue-600"
-                checked
-              />
-              <span className="ml-2">Không</span>
-            </label>
-          </div>
+          <span className="block text-lg mb-2 font-medium">
+            Quý vị có cung cấp nôi không?
+          </span>
+          <p className="text-md text-gray-500 mb-3">
+            Nôi phù hợp cho phần lớn trẻ sơ sinh từ 0 - 3 tuổi và có thể được
+            cung cấp theo yêu cầu của khách.
+          </p>
+          <RadioCheckBox
+            setSelectedValue={setHasCrib}
+            selectedValue={hasCrib}
+            inputName="hasCrib"
+            setValue={setValue}
+          />
         </div>
 
         <div>
-          <label className="block text-lg  mb-2">
+          <span className="block text-lg mb-2 font-medium">
             Căn hộ này rộng bao nhiêu?
-          </label>
-          <span className="block font-medium mb-1">Diện tích căn hộ - không bắt buộc</span>
+          </span>
+          <span className="block mb-1">Diện tích căn hộ - không bắt buộc</span>
 
-          <div className="flex space-x-2">  
+          <div className="flex space-x-2">
             <input
               type="text"
               placeholder=""
-              className="flex-grow p-2 border border-gray-300 rounded-md"
+              className="flex-grow p-2 border border-gray-300 outline-none rounded-md focus:ring-2 focus:ring-blue-500"
+              {...register("area", {
+                pattern: {
+                  value: /^[0-9]+$/,
+                  message: "Vui lòng nhập kí tự số",
+                },
+              })}
             />
+
             <select className="border border-gray-300 rounded-md p-2">
               <option value="m2">mét vuông</option>
               <option value="ft2">feet vuông</option>
             </select>
           </div>
+
+          <ErrorMessage errors={errors} id={"area"} />
         </div>
       </div>
     </>

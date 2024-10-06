@@ -16,8 +16,8 @@ import LoginGifts from "@/components/LoginGifts/LoginGifts";
 export function Home() {
   const listRestArea = useQuery({
     queryKey: [queriesKey.GET_LIST_REST_AREA],
-    queryFn: getListRestArea,
-  });
+    queryFn: getListRestArea, 
+  }); 
 
   return (
     <div>
